@@ -24,16 +24,14 @@ export const getCategories = (req, res, next) => {
 
 //! Fetch Products having a specific category /category/fetch-products?category=${}
 export const getProductsFromCategories = (req, res, next) => {
-  const category = req.body.category;
-
-  Product.populate("category")
-    .execPopulate()
-    .find({ category: category })
+  const categoryId = req.query.category;
+  Product
+    .find({ category: categoryId })
     .then((products) => {
       res.status(200).json({
         message: `Products fetched successfully`,
         data: {
-          category: category,
+          category: categoryId,
           products: products,
           count: products.length,
         },

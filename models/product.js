@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
   //TODO: Check if a vendor is required with product
-  category: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "category",
-    },
-  ],
+  category:
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "category",
+  },
+
   // ._id
   vendor: {
     type: mongoose.Schema.Types.ObjectId,
