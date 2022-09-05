@@ -4,7 +4,7 @@ import {
   getProduct,
   getProducts,
   getSortedProducts,
-} from "../controllers/productController";
+} from "../controllers/productController.js";
 
 const router = Router();
 

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { invalidEndpoint } from "../controllers/catchAllController";
+import { invalidEndpoint } from "../controllers/catchAllController.js";
 
 const router = Router();
 

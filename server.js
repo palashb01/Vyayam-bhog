@@ -9,7 +9,7 @@ import authRouter from "./routes/authRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import vendorRouter from "./routes/vendorRoutes.js";
 import productRouter from "./routes/productRoutes.js";
-import catergoryRouter from "./routes/catergoryRoutes.js";
+import catergoryRouter from "./routes/categoryRoutes.js";
 import catchAllRouter from "./routes/catchAllRoutes.js";
 
 const app = express();
@@ -31,7 +31,7 @@ app.use(
 app.use(bodyParser.json());
 
 app.use("/auth", authRouter);
-app.use("/user", userRouter);
+//app.use("/user", userRouter);
 app.use("/product", productRouter);
 app.use("/vendor", vendorRouter);
 app.use("/category", catergoryRouter);
@@ -41,4 +41,5 @@ mongoose.connect(MONGO_URI, (res) => {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
-});
+}).then(res => console.log("res")).catch(err => console.error(err));
+  

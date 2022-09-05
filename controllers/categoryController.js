@@ -1,7 +1,8 @@
-import Category from "../models/category";
-import Product from "../models/product";
+import Category from "../models/category.js";
+import Product from "../models/product.js";
 
 //! fetching all categories /category/fetch-all
+//? working Endpoint
 export const getCategories = (req, res, next) => {
   Category.find({})
     .sort({ name: 1 })

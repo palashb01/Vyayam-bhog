@@ -1,16 +1,18 @@
 import mongoose from "mongoose";
 
+
 const productSchema = new mongoose.Schema({
   //TODO: Check if a vendor is required with product
   category: [
     {
-      type: mongoose.Types.ObjectId,
-      ref: "Category",
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "category",
     },
   ],
+  // ._id
   vendor: {
-    type: mongoose.Types.ObjectId,
-    ref: "Vendor",
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "vendor",
   },
   name: {
     type: String,
@@ -19,7 +21,7 @@ const productSchema = new mongoose.Schema({
     trim: true,
   },
   price: {
-    type: mongoose.Types.Decimal128,
+    type: mongoose.Schema.Types.Decimal128,
     required: true,
   },
   description: {
